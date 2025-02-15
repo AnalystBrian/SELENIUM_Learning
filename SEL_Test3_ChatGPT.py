@@ -10,7 +10,7 @@
 
 # https://www.baeldung.com/linux/geckodriver-installation
 
-# This program is now working on Ubuntu as of 15/02/2025
+# This program is now ---WORKING--- on Ubuntu as of 15/02/2025
 
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
