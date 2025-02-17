@@ -33,6 +33,7 @@ except subprocess.CalledProcessError as e:
 except FileNotFoundError:
     print(f"Could not find the program at {rust_program_path}. Ensure it is compiled correctly.")
 
+#---------------------------------------------------------------------------------------------------
 # Output:
 # /usr/bin/python3.12 /home/zab/PycharmProjects/SELENIUM_Learning/Python_Rust_3.py
 # Result from Rust program: 14
