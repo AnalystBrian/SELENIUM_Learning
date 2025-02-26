@@ -11,6 +11,7 @@
 # https://www.baeldung.com/linux/geckodriver-installation
 
 # This program is now ---WORKING--- on Ubuntu as of 26/02/2025
+# And on Work Laptop Windows as of 26/02/2025
 
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
@@ -22,13 +23,12 @@ edge_options.add_argument("--start-maximized")  # Optional: Customize browser be
 
 # Linux
 # Specify the path to your msedgedriver
-service = Service(executable_path='/home/zab/Desktop/msedgedriver')
-driver = webdriver.Edge(service=service, options=edge_options)
+#service = Service(executable_path='/home/zab/Desktop/msedgedriver')
+#driver = webdriver.Edge(service=service, options=edge_options)
 #---------------------------------------------------------------------------------------------
 # Windows
-#service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
-#driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
-#driver = webdriver.Edge(service=service, options=edge_options) # It seems that you don't need to specify the PATH when using Edge
+service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
+driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
 #----------------------------------------------------------------------------------------------
 
 #driver.get('https://www.example.com')
