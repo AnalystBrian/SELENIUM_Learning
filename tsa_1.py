@@ -20,6 +20,7 @@ from selenium import webdriver
 from selenium.webdriver.edge.service import Service
 from selenium.webdriver.edge.options import Options
 import time
+from selenium.webdriver.common.by import By
 
 edge_options = Options()
 edge_options.add_argument("--start-maximized")  # Optional: Customize browser behavior
@@ -36,7 +37,24 @@ driver = webdriver.Edge() # It seems that you don't need to specify the PATH whe
 
 #driver.get('https://www.example.com')
 driver.get("https://techstepacademy.com/training-ground")
+
+input1Path = "input[id='ipt1']"
+
+# use .find_element_by_css_selector() has been deprecated
+element = driver.find_element(By.CSS_SELECTOR,input1Path)
+
+input1Element = driver.find_element(By.CSS_SELECTOR,input1Path)
+# Type something into it:
+input1Element.send_keys("Brian")
+
+# Next course module is "Finding Tricky Elements using XPATH
+
 time.sleep(5)
 driver.quit()
-
 print("Done")
+
+# Right click and Inspect
+# Use Console on browser. Click Console and then the circle crossed with a diagonal line
+# $$() means CSS selector
+# $$("input[id='ipt1']")
+# save this as a path: input1Path then build a locator
