@@ -44,22 +44,26 @@ driver.get("https://techstepacademy.com/training-ground")
 # to use Console on browser. Click Console and then the circle crossed with a diagonal line
 # $$() means CSS selector
 # $$("input[id='ipt1']")
-# save this as a path: input1Path then build a locator
+# save this as a path as a variable (input1Path) and then build a locator
 
 input1Path = "input[id='ipt1']"
 
 # Remember that the old way (that I learned) of doing this has been deprecated:
 # use .find_element_by_css_selector() has been deprecated
 # Below is the new way:
-element = driver.find_element(By.CSS_SELECTOR,input1Path)
-
+#element = driver.find_element(By.CSS_SELECTOR,input1Path)
+# Eg:
 input1Element = driver.find_element(By.CSS_SELECTOR,input1Path)
 # Type something into it:
 # The way you do this is using send_keys:
 input1Element.send_keys("Brian")
 
-# Next course module is "Finding Tricky Elements using XPATH
-
 time.sleep(5)
 driver.quit()
 print("Done")
+
+# Next course module is "Finding Tricky Elements using XPATH
+
+# Locating the element
+# Clicking the element
+# Send something to the element
