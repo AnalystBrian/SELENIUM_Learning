@@ -35,16 +35,27 @@ service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
 driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
 #----------------------------------------------------------------------------------------------
 
-#driver.get('https://www.example.com')
+# First, go to the training ground that has been set up by Tech Step Academy:
 driver.get("https://techstepacademy.com/training-ground")
+
+# Next, you want to try and locate an element on the page. The best way to do this is to
+# open your normal Edge browser, right click on the element that you want and inspect.
+# You can run Python code repeatedly trying to test it but it is far quicker and easier
+# to use Console on browser. Click Console and then the circle crossed with a diagonal line
+# $$() means CSS selector
+# $$("input[id='ipt1']")
+# save this as a path: input1Path then build a locator
 
 input1Path = "input[id='ipt1']"
 
+# Remember that the old way (that I learned) of doing this has been deprecated:
 # use .find_element_by_css_selector() has been deprecated
+# Below is the new way:
 element = driver.find_element(By.CSS_SELECTOR,input1Path)
 
 input1Element = driver.find_element(By.CSS_SELECTOR,input1Path)
 # Type something into it:
+# The way you do this is using send_keys:
 input1Element.send_keys("Brian")
 
 # Next course module is "Finding Tricky Elements using XPATH
@@ -52,9 +63,3 @@ input1Element.send_keys("Brian")
 time.sleep(5)
 driver.quit()
 print("Done")
-
-# Right click and Inspect
-# Use Console on browser. Click Console and then the circle crossed with a diagonal line
-# $$() means CSS selector
-# $$("input[id='ipt1']")
-# save this as a path: input1Path then build a locator
