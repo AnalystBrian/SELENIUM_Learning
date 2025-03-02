@@ -44,6 +44,7 @@ username_elem.send_keys("brianknel@yahoo.com")
 pword_elem = driver.find_element(By.ID,"id_password")
 #pword_elem = driver.find_element(By.XPATH,"/html/body/div[8]/div/div/div[1]/div/div[2]/div[2]/div/div/div/form/div[2]/span[2]")
 pword_elem.send_keys("Joburg2023&1")
+time.sleep(20)
 
 sign_in_btn = driver.find_element(By.XPATH,"/html/body/div[8]/div/div/div[1]/div/div[2]/div[2]/div/div/div/form/button")
 sign_in_btn.click()
