@@ -47,6 +47,19 @@ pword_elem.send_keys("Joburg2023&1")
 
 sign_in_btn = driver.find_element(By.XPATH,"/html/body/div[8]/div/div/div[1]/div/div[2]/div[2]/div/div/div/form/button")
 sign_in_btn.click()
+#-----------------------------------------------------------------------------------------------------------
+# Searching the element:
+time.sleep(2)
+srch_btn = driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div[2]/div[2]/div/div/div/button[1]/span")
+srch_btn.click()
+
+time.sleep(2)
+srch_inpt = driver.find_element(By.XPATH,"//*[@id='overlap-manager-root']/div[2]/div/div[2]/div/div/div[1]/div/div[1]/span/form/input")
+srch_inpt.send_keys("NVDA")
+
+time.sleep(2)
+selector1 = driver.find_element(By.XPATH,"//*[@id='overlap-manager-root']/div[2]/div/div[2]/div/div/div[1]/div/div[2]/div/div[4]/div/div/div[1]/div[1]/div[2]/div")
+selector1.click()
 
 #-----------------------------------------------------------------------------------------------------------
 time.sleep(24)
