@@ -27,12 +27,13 @@ edge_options.add_argument("--start-maximized")  # Optional: Customize browser be
 
 # Linux
 # Specify the path to your msedgedriver
-#service = Service(executable_path='/home/zab/Desktop/msedgedriver')
-#driver = webdriver.Edge(service=service, options=edge_options)
+service = Service(executable_path='/home/cde/Desktop/msedgedriver') #Geekom box
+#service = Service(executable_path='/home/zab/Desktop/msedgedriver') # Laptop box
+driver = webdriver.Edge(service=service, options=edge_options)
 #---------------------------------------------------------------------------------------------
 # Windows
-service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
-driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
+#service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
+#driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
 #----------------------------------------------------------------------------------------------
 
 # First, go to the training ground that has been set up by Tech Step Academy:

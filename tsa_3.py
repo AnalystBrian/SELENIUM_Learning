@@ -30,12 +30,12 @@ edge_options.add_argument("--start-maximized")  # Optional: Customize browser be
 
 # Linux
 # Specify the path to your msedgedriver
-#service = Service(executable_path='/home/zab/Desktop/msedgedriver')
-#driver = webdriver.Edge(service=service, options=edge_options)
+service = Service(executable_path='/home/cde/Desktop/msedgedriver')
+driver = webdriver.Edge(service=service, options=edge_options)
 #---------------------------------------------------------------------------------------------
 # Windows
-service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
-driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
+#service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
+#driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
 #----------------------------------------------------------------------------------------------
 
 # First, go to the training ground that has been set up by Tech Step Academy:
@@ -56,12 +56,39 @@ input1Path = "input[id='ipt1']"
 # Below is the new way:
 #element = driver.find_element(By.CSS_SELECTOR,input1Path)
 # Eg:
-input1Element = driver.find_element(By.CSS_SELECTOR,input1Path)
+#time.sleep(5)
+input1Element = driver.find_element(By.ID,"r1Input")
+
 # Type something into it:
 # The way you do this is using send_keys:
-input1Element.send_keys("Brian")
+input1Element.send_keys("rock")
 
-time.sleep(5)
+
+# Find the Button:
+btn1 = driver.find_element(By.ID,"r1Btn")
+btn1.click()
+
+# This will cause the pop-up with the password "bamboo" to appear. Find that part next:
+riddle_password = driver.find_element(By.ID,"passwordBanner")
+# Print it out:
+txt_riddle_password = riddle_password.text
+print(txt_riddle_password)
+# Note: if something is between 2 tags (like bamboo is), we can call the .text method on it. If not we
+# have to call the .value on it.
+# <h4>bamboo</h4>
+# see above, it is between 2 h4 tags.
+#-----------------------------------------------------------------------------------------------------------
+# Riddle of Secrets:
+
+# Find the next input element:
+input2Element = driver.find_element(By.ID,"r2Input")
+input2Element.send_keys(txt_riddle_password)
+# Find the next button and click it:
+btn2 = driver.find_element(By.ID,"r2Butn")
+btn2.click()
+
+#-----------------------------------------------------------------------------------------------------------
+time.sleep(2)
 driver.quit()
 print("Done")
 
