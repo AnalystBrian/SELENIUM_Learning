@@ -88,12 +88,11 @@ btn2 = driver.find_element(By.ID,"r2Butn")
 btn2.click()
 
 #-----------------------------------------------------------------------------------------------------------
+# The Two Merchants:
+
+#-----------------------------------------------------------------------------------------------------------
 time.sleep(2)
 driver.quit()
 print("Done")
 
-# Next course module is "Finding Tricky Elements using XPATH
 
-# Locating the element
-# Clicking the element
-# Send something to the element
