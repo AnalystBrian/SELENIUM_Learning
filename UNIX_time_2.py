@@ -46,7 +46,8 @@ df["time_e"] = df["time_d"].apply(datetime_split)
 # Drop the unnecessary columns ('time' and 'time_d'):
 df.drop(['time','time_d'],axis=1,inplace=True)
 
-# Rename column time_e to time to complete the process:
+# Rename column time_e to time:
+df = df.rename(columns={'time_e': 'time'})
 
 # -------------------- Output to an Excel File --------------------------------------------------------------------------------------
 # Define a path to where you would like to create your output Excel file:
