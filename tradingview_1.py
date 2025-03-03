@@ -12,12 +12,12 @@ edge_options.add_argument("--start-maximized")  # Optional: Customize browser be
 
 # Linux
 # Specify the path to your msedgedriver
-service = Service(executable_path='/home/cde/Desktop/msedgedriver')
-driver = webdriver.Edge(service=service, options=edge_options)
+#service = Service(executable_path='/home/cde/Desktop/msedgedriver')
+#driver = webdriver.Edge(service=service, options=edge_options)
 #---------------------------------------------------------------------------------------------
 # Windows
-#service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
-#driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
+service = Service(executable_path="C:\\Users\\BNel\\Desktop\\msedgedriver.exe")
+driver = webdriver.Edge() # It seems that you don't need to specify the PATH when using Edge
 #----------------------------------------------------------------------------------------------
 
 # First, go to your website:
@@ -44,10 +44,11 @@ username_elem.send_keys("brianknel@yahoo.com")
 pword_elem = driver.find_element(By.ID,"id_password")
 #pword_elem = driver.find_element(By.XPATH,"/html/body/div[8]/div/div/div[1]/div/div[2]/div[2]/div/div/div/form/div[2]/span[2]")
 pword_elem.send_keys("Joburg2023&1")
-time.sleep(20)
 
 sign_in_btn = driver.find_element(By.XPATH,"/html/body/div[8]/div/div/div[1]/div/div[2]/div[2]/div/div/div/form/button")
 sign_in_btn.click()
+time.sleep(20)
+# You need to complete the recaptcha manually here and click the sign in button again. That seems to work
 #-----------------------------------------------------------------------------------------------------------
 # Searching the element:
 time.sleep(2)
@@ -56,7 +57,8 @@ srch_btn.click()
 
 time.sleep(2)
 srch_inpt = driver.find_element(By.XPATH,"//*[@id='overlap-manager-root']/div[2]/div/div[2]/div/div/div[1]/div/div[1]/span/form/input")
-srch_inpt.send_keys("NVDA")
+srch_inpt.send_keys("PLTR")
+# LLY, JNJ, PLTR, NVDA
 
 time.sleep(2)
 selector1 = driver.find_element(By.XPATH,"//*[@id='overlap-manager-root']/div[2]/div/div[2]/div/div/div[1]/div/div[2]/div/div[4]/div/div/div[1]/div[1]/div[2]/div")
@@ -64,7 +66,7 @@ selector1.click()
 
 #-----------------------------------------------------------------------------------------------------------
 time.sleep(24)
-driver.quit()
+#driver.quit()
 print("Done")
 
 
